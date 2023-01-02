@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="preconnect" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Display</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <button class="cabecalhoMenu" onclick="botaoMenu()" aria-label="Menu"><i class="fa fa-bars"></i></button>
+        <img class="cabecalhoImg" src="/assets/img/logo.svg" alt="logo">
+        <button class="cabecalhoNotificacao" aria-label="Notificação"><i class="fa fa-bell"></i></button>
+    </header>
+    <nav class="menu__lateral" id="menuLink">
+        <img class="menu__lateral__logo" src="./assets/img/logo.svg" alt="logo">
+        <a href="#" class="menu__lateral__link menu__lateral__link__inicio menu__lateral__link--ativo"><i
+                class="fa fa-home"></i>Inicio</a>
+        <a href="#" class="menu__lateral__link menu__lateral__link__videos"><i class="fa fa-video-camera"></i>Videos</a>
+        <a href="#" class="menu__lateral__link menu__lateral__link__picos"><i class="fa fa-map-marker"></i>Picos</a>
+        <a href="#" class="menu__lateral__link menu__lateral__link__integrantes"><i
+                class="fa fa-users"></i>Integrantes</a>
+        <a href="#" class="menu__lateral__link  menu__lateral__link__camisas"><i class="fa fa-male"></i>Camisas</a>
+        <a href="#" class="menu__lateral__link  menu__lateral__link__pinturas"><i
+                class="fa fa-picture-o"></i>Pinturas</a>
+    </nav>
+    <main class="princial">
+        <h1 class="tituloPagina">Inicio</h1>
+        <article class="cartao">
+            <img src="./assets/img/banner-mobile_1.png" alt="mobile" class="cartaoImagem">
+            <div class="cartaoConteudo">
+                <p class="cartaoDestaque"> Video em descataque</p>
+                <h3 class="cataoTitulo">H2C TITULO</h3>
+                <p class="cartaoPerfil">Daniel</p>
+                <p class="cartaoInfo cartaoTempo "><i class="fa fa-clock-o"></i>33 min</p>
+                <p class="cartaoInfo cartaoVisualizacao "><i class="fa fa-eye"></i>33 Vizualizações</p>
+                <button class="botaoCartao botaoPlay botaoCartaoDestaque"><i class="fa fa-play"></i>Assistir Agora </button>
+            </div>
+        </article>
+    </main>
+    <script src="./index.js"></script>
+</body>
+
+
+</html>
