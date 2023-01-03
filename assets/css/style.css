@@ -98,9 +98,15 @@ Observação: a align-selfpropriedade substitui a propriedade align-items do con
 
 .princial {
   padding: 24px 16px;
+  display: grid;
+  gap: 16px;
 }
 .tituloPagina {
   font-size: 1.5rem;
+  font-weight: 700;
+}
+.titulo-secao {
+  font-size: 1.2rem;
   font-weight: 700;
 }
 .cartao {
@@ -110,38 +116,45 @@ Observação: a align-selfpropriedade substitui a propriedade align-items do con
   /* tudo de passar do limite fica escondido */
   background-color: #2c343a;
 }
-.cartaoDestaque{
-
+.cartao--Destaque {
+  margin-bottom: 16px;
+  grid-area: destaque;
+}
+.cartaoDestaque {
   grid-column: span 2;
 }
 .cartaoConteudo {
   padding: 9px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
+  gap: 8px;
 }
 .cataoTitulo {
   font-size: 1.2rem;
   font-weight: 700;
   grid-column: span 2;
-/* vai ocupar uma linha interia da coluna */
+  /* vai ocupar uma linha interia da coluna */
 }
 .cartaoPerfil {
   color: #95999c;
   font-size: 0.9rem;
   grid-column: span 2;
-
 }
 .cartaoInfo {
   display: flex;
   align-items: center;
   color: #95999c;
 }
-.cartaoTempo i{
+.cartaoTempo i {
   margin-right: 8px;
 }
-.cartaoVisualizacao i{
+.cartaoVisualizacao i {
   margin-right: 8px;
+}
+
+.cartaoImagem {
+  width: 100%;
+  overflow: hidden;
 }
 
 .botaoCartao {
@@ -154,6 +167,7 @@ Observação: a align-selfpropriedade substitui a propriedade align-items do con
   border-radius: 10px;
   font-size: 10px;
   color: white;
+  justify-self: flex-end;
 }
 .botaoPlay {
   font-size: 14px;
@@ -165,4 +179,165 @@ Observação: a align-selfpropriedade substitui a propriedade align-items do con
 }
 .botaoCartaoDestaque i {
   margin-right: 8px;
+}
+.secao {
+  display: grid;
+  gap: 16px;
+}
+.cabecalho--perfil {
+  display: none;
+}
+
+.cartao--recente {
+  display: none;
+}
+.cartao-imagem--descktop{display: none;}
+
+@media screen and (min-width: 1440px) {
+  .cartao--destaque{
+
+    margin-bottom: 0;
+  }
+
+  .secao {
+ grid-template-columns: repeat(4,1fr);
+  }
+
+  .titulo-secao {
+   grid-column: span 4;
+  }
+  body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+  .botaoCartaoDestaque{
+
+    grid-column: auto;
+    padding: 16px 8px;
+  }
+  .cabecalho {
+    background-color: #1d232a;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 32px;
+    padding: 16px 60px;
+    height: 80px;
+    box-sizing: border-box;
+    grid-column: 2;
+  }
+  .cartao-imagem--descktop{
+    display: block;
+  }
+  .cartao-imagem--mobile{
+    display: none;
+  }
+  .cabecalhoMenu,
+  .cabecalhoImg {
+    display: none;
+  }
+
+  .cabecalho--perfil {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 8px;
+    align-items: center;
+    justify-self: flex-end;
+    color: #95999c;
+    padding: 8px 32px;
+    border-right: 1px solid #95999c;
+  }
+  .cabecalho--perfil::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url(../img/produto_2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .menu__lateral {
+    width: 200px;
+    position: static;
+    grid-column: 1;
+    /* mostra onde vai começar na coluna  */
+    grid-row: 1 / span 2;
+    /* mostra onde vai começar na linha  */
+  }
+  .princial {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "tituloPagina tituloPagina tituloPagina"
+      "destaque--video destaque--video  videos--recentes"
+      "secao-videos secao-videos secao-videos"
+      " produtos-recentes destaque-produto destaque-produto"
+      "secao-produtos secao-produtos secao-produtos";
+    column-gap: 32px;
+    padding: 16px 60px;
+    grid-column: 2;
+  }
+  .cartao--recente {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    row-gap: 24px;
+    width: 256px;
+    padding: 16px;
+    box-sizing: border-box;
+    align-self: flex-start;
+  }
+  .cartao--recente .cartao--titulo {
+    grid-column: auto;
+  }
+  .cartao--link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0480dc;
+    justify-self: flex-end;
+  }
+  .cartao--lista {
+    display: grid;
+    row-gap: 16px;
+    grid-column: span 2;
+  }
+  .cartao--item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+  }
+  .cartao--primeiro {
+    width: 32px;
+    grid-row: span 2;
+  }
+  .cartao--titulo--item {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    font-weight: 700;
+  }
+  .nome--cartao--item {
+    font-size: 0.8rem;
+    color: #95999c;
+  }
+  .tituloPagina {
+    grid-area: tituloPagina;
+  }
+  .destaque--video {
+    grid-area: destaque--video;
+  }
+  .videos--recentes {
+    grid-area: videos--recentes;
+  }
+  .secao-videos {
+    grid-area: secao-videos;
+  }
+  .destaque-produto {
+    grid-area: destaque-produto;
+  }
+  .produtos-recentes {
+    grid-area: produtos-recentes;
+  }
+  .secao-produtos {
+    grid-area: secao-produtos;
+  }
 }
