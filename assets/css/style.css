@@ -307,8 +307,8 @@ Observação: a align-selfpropriedade substitui a propriedade align-items do con
     gap: 8px;
   }
   .cartao--primeiro {
-    width: 32px;
-    grid-row: span 2;
+    width: 50px;
+    /* grid-row: span 2; */
   }
   .cartao--titulo--item {
     font-size: 0.9rem;
